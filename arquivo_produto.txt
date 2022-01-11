@@ -1,0 +1,12 @@
+PRODUTOS DA NOTA FISCAL
+Código...........: 8
+Quantidade.......: 0
+R$ p/ unidade...R$ 0,00
+Descrição........: /n
+---------------------------------------------
+PRODUTOS DA NOTA FISCAL
+Código...........: 47
+Quantidade.......: 0
+R$ p/ unidade...R$ 28,82
+Descrição........: ø/n
+---------------------------------------------
