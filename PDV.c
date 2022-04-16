@@ -21,6 +21,9 @@ int main(void){
 	int i;
 	char resposta;
 	
+	//printf("----------MENU----------");
+	//printf("[1] CADASTRAR PRODUTO\n[2] CONSULTAR PRODUTO\n[3] SAIR");
+	
 	do{
 		for(i = 0; i < U; i++){
 			printf("Produto [%i]\n", i + 1);
