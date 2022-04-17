@@ -18,44 +18,55 @@ int main(void){
 	
 	produto prod;
 	//declaração de variaveis
-	int i;
+	int i, opcao;
 	char resposta;
 	
-	//printf("----------MENU----------");
-	//printf("[1] CADASTRAR PRODUTO\n[2] CONSULTAR PRODUTO\n[3] SAIR");
 	
 	do{
-		for(i = 0; i < U; i++){
-			printf("Produto [%i]\n", i + 1);
-			printf("Código..........: "); scanf("%d", &prod[i].cod);
-			printf("Quantidade......: "); scanf("%d", &prod[i].quantidade);
-			printf("R$ p/ unidade R$  "); scanf("%f", &prod[i].unidade);
-			printf("Descrição.......: "); fflush(stdin); gets(prod[i].descricao);
-			printf("---------------------------------------------------\n");
-		}
+		printf("----------MENU----------\n");
+		printf("[1] CADASTRAR PRODUTO\n[2] CONSULTAR PRODUTO\n[3] SAIR\nDigite a opção: ");
+		scanf("%i", &opcao);
 		system("cls");
-		//mostrar o relatorio
-		for(i = 0; i < U; i++){
-			printf("Produto [%i]\n", i + 1);
-			printf("Código.........: %d\n", prod[i].cod);
-			printf("Quantidade.....: %d\n", prod[i].quantidade);
-			printf("R$ p/ unidade R$ %.2f\n", prod[i].unidade);
-			printf("Descrição......: %s\n", prod[i].descricao);
-			printf("---------------------------------------------------\n");
-		}
-		printf("Dados cadastrados ! Confirma os dados ? [S/N]: ");
-		resposta = getchar();
-		resposta = toupper(resposta);
-		if(resposta == 'S'){
-			salvarEmArquivo();
-		}else{
-			system("cls");
-			printf("Por favor ! Insira novamente os dados.\n");
-		}
-	}while(resposta == 'N');
+	
+			switch(opcao){
+				case 1:
+							do{
+								for(i = 0; i < U; i++){
+									printf("Produto [%i]\n", i + 1);
+									printf("Código..........: "); scanf("%d", &prod[i].cod);
+									printf("Quantidade......: "); scanf("%d", &prod[i].quantidade);
+									printf("R$ p/ unidade R$  "); scanf("%f", &prod[i].unidade);
+									printf("Descrição.......: "); fflush(stdin); gets(prod[i].descricao);
+									printf("---------------------------------------------------\n");
+							}
+							system("cls");
+							//mostrar o relatorio
+							for(i = 0; i < U; i++){
+								printf("Produto [%i]\n", i + 1);
+								printf("Código.........: %d\n", prod[i].cod);
+								printf("Quantidade.....: %d\n", prod[i].quantidade);
+								printf("R$ p/ unidade R$ %.2f\n", prod[i].unidade);
+								printf("Descrição......: %s\n", prod[i].descricao);
+								printf("---------------------------------------------------\n");
+							}
+							printf("Dados cadastrados ! Confirma os dados ? [S/N]: ");
+							resposta = getchar();
+							resposta = toupper(resposta);
+							system("cls");
+							if(resposta == 'S'){
+								salvarEmArquivo();
+								break;
+							}else{
+								system("cls");
+								printf("Por favor ! Insira novamente os dados.\n");
+							}
+						}while(resposta == 'N');
+			}
+	}while(opcao != 3);
 	
 	
-	printf("Está OK até aqui.");
+	
+	
 
 	return 0;
 }
